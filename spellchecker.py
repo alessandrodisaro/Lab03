@@ -2,17 +2,22 @@ import time
 
 import multiDictionary as md
 
+
 class SpellChecker:
 
     def __init__(self):
         pass
 
     def handleSentence(self, txtIn, language):
+        diz=md.MultiDictionary()
+        diz.searchWord(txtIn,language)
+
+        #QUA POI DEVI ORGANIZZARE LE CORREZIONI
         pass
 
     def printMenu(self):
         print("______________________________\n" +
-              "      SpellChecker 101\n"+
+              "      SpellChecker 101\n" +
               "______________________________\n " +
               "Seleziona la lingua desiderata\n"
               "1. Italiano\n" +
@@ -23,4 +28,7 @@ class SpellChecker:
 
 
 def replaceChars(text):
-    pass
+    chars = "\\`*_{}[]()>#+-.!$%^;,=_~"
+    for c in chars:
+        text = text.replace(c, "")
+    return text

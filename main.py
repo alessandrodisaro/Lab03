@@ -1,8 +1,8 @@
 import spellchecker
 
 sc = spellchecker.SpellChecker()
-
-while(True):
+live=True #per dire al programma quando stopparsi
+while(live):
     sc.printMenu()
 
     txtIn = input()

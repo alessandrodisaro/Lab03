@@ -1,13 +1,16 @@
 class Dictionary:
-    def __init__(self):
-        pass
+    def __init__(self, lingua):
+        self.lingua = lingua
+        self._dict = []
 
-    def loadDictionary(self,path):
-        pass
+    def loadDictionary(self, path):
+        with open(path, "r") as file:
+            for line in file:
+                self._dict.append(line)
 
     def printAll(self):
-        pass
-
+        for line in self._dict:
+            print(line)
 
     @property
     def dict(self):
