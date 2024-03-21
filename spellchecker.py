@@ -30,7 +30,34 @@ class SpellChecker:
         print(f"Tempo impiegato: {time_stamp_finish-time_stamp_start} ")   # faccio la differenza per ottenere il tempo di processo
 
         # qua inserisci poi le chiamate per gli altri tipi di ricerca
+        print("\n")
+        print("Ricerca linear: ")
+        time_stamp_start=time.time()
+        lista_corrette = diz.searchWordLinear(txtInCorrect, language)
+        cnt=False
+        for parola in lista_corrette:
+            if parola.corretta == False:
+                print(parola)
+                cnt = True
+        time_stamp_finish = time.time()  # qua predno il timestamp di fine
+        if cnt == False:
+            print("Nessun errore")
+        print(f"Tempo impiegato: {time_stamp_finish - time_stamp_start} ")
 
+        #qua c e la ricerca dicotmica
+        print("\n")
+        print("Ricerca dicotomica: ")
+        time_stamp_start = time.time()
+        lista_corrette = diz.searchWordDichotomic(txtInCorrect, language)
+        cnt = False
+        for parola in lista_corrette:
+            if parola.corretta == False:
+                print(parola)
+                cnt = True
+        time_stamp_finish = time.time()  # qua predno il timestamp di fine
+        if cnt == False:
+            print("Nessun errore")
+        print(f"Tempo impiegato: {time_stamp_finish - time_stamp_start} ")
 
     def printMenu(self):
         print("______________________________\n" +
@@ -45,7 +72,7 @@ class SpellChecker:
 
 
     def replaceChars(self,text):
-        chars = "\\`*_{}[]()>#+-.!$%^;,=_~"
+        chars = "\/`*_{}[]()>#+-.!$%^;,=_~"
         for c in chars:
             text = text.replace(c, "")
         return text

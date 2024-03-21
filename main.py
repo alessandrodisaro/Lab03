@@ -8,11 +8,12 @@ while (live):
     txtIn = input()
     # Add input control here!
 
+
     if int(txtIn) == 1:
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
         sc.handleSentence(txtIn, "italian")
-        break   # vedi se ce un modo migliore di uscire dal while
+        break   # vedi se ce un modo migliore di uscire dal while1
 
     if int(txtIn) == 2:
         print("Inserisci la tua frase in Inglese\n")

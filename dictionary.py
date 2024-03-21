@@ -4,7 +4,7 @@ class Dictionary:
         self._dict = []
 
     def loadDictionary(self, path):
-        with open(path, "r") as file:   #aggiungi l enncoding utf 8 per lo spagnolo
+        with open(path, "r", encoding='utf-8') as file:   #aggiungi l enncoding utf 8 per lo spagnolo
             for line in file:
                 self._dict.append(line)
 
